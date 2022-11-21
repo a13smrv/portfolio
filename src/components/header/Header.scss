@@ -1,0 +1,11 @@
+@use "./../../scss/variables";
+
+.header {
+  display: flex;
+  justify-content: center;
+  height: 50px;
+
+  .pageTitle {
+    font-family: variables.$titleFont;
+  }
+}

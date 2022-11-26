@@ -1,6 +1,15 @@
 $titleColor: #25323d;
 $textColor: #5d87a8;
-$linkColor: #af48ff;
+$themeColor: #af48ff;
 
-$titleFont: "Poppins";
-$textFont: "Roboto";
+$titleFont: "Poppins", sans-serif;
+$textFont: "Roboto", sans-serif;
+
+$titleSize: 50px;
+$pageTitleSize: 20px;
+$normaltextSize: 15px;
+$smallTextSize: 12px;
+
+$fontWeightRegular: 400;
+$fontWeightSemiBold: 600;
+$fontWeightBold: 700;

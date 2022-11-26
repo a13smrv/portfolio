@@ -1,6 +1,9 @@
 import React from "react";
 import "./Header.scss";
 
+import GitHubIcon from "./img/GitHub.svg";
+import LinkedInIcon from "./img/LinkedIn.svg";
+
 export function Header() {
   return (
     <header className="header">
@@ -11,10 +14,10 @@ export function Header() {
         </div>
         <div className="socialMediaBlock">
           <div className="socialMediaItem">
-            GH
+            <img src={GitHubIcon} alt="GitHub" />
           </div>
           <div className="socialMediaItem">
-            LIN
+            <img src={LinkedInIcon} alt="LinkedIn" />
           </div>
         </div>
       </div>

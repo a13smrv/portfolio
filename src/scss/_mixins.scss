@@ -1,0 +1,8 @@
+@use "./variables";
+
+@mixin fontStyle($fontFamily, $fontSize, $fontWeight, $color) {
+  font-family: $fontFamily;
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  color: $color;
+}

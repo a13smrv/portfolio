@@ -13,12 +13,12 @@ export function Header() {
           <div className="currentStatus">Now available</div>
         </div>
         <div className="socialMediaBlock">
-          <div className="socialMediaItem">
+          <a href="#" className="socialMediaItem">
             <img src={GitHubIcon} alt="GitHub" />
-          </div>
-          <div className="socialMediaItem">
+          </a>
+          <a href="#" className="socialMediaItem">
             <img src={LinkedInIcon} alt="LinkedIn" />
-          </div>
+          </a>
         </div>
       </div>
     </header>

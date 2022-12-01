@@ -1,7 +1,54 @@
+@use "./../../scss/variables";
+@use "./../../scss//mixins";
+
 .profile {
   display: flex;
   justify-content: center;
+  padding-top: 35px;
 
   .container {
+    display: flex;
+  }
+
+  .textDescription {
+    width: 500px;
+
+    .title {
+      margin: 0;
+  
+      @include mixins.fontStyle(
+        variables.$titleFont,
+        variables.$titleSize,
+        variables.$fontWeightBold,
+        variables.$titleColor
+      );
+    }
+  
+    .text {
+      line-height: 21px;
+      margin: 0;
+
+      @include mixins.fontStyle(
+        variables.$textFont,
+        variables.$normaltextSize,
+        variables.$fontWeightRegular,
+        variables.$textColor
+      );
+
+      .link {
+        text-decoration: none;
+        color: variables.$themeColor;
+      }
+    }
+
+    .introduction {
+      margin: 40px 0 0 0;
+    }
+
+    .bottomInformationBlock {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 25px
+    }
   }
 }

@@ -23,7 +23,13 @@ export function Profile() {
           </div>
         </div>
         <div className="visualDescription">
-          1
+          <div className="profileCard">
+            <div className="avatar">
+              <img src="" alt="avatar" />
+            </div>
+            <p className="name"></p>
+            <p className="location"></p>
+          </div>
         </div>
       </div>
     </section>

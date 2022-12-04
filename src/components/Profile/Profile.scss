@@ -59,15 +59,74 @@
     flex-grow: 1;
 
     .profileCard {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between; //1111111111
       width: 250px;
       height: 215px;
+      padding: 35px 25px;
+      box-sizing: border-box;
       border-radius: 15px;
       background-color: #ffffff;
       box-shadow: 0px 40px 30px rgba($color: #000000, $alpha: 0.05);
 
       .avatar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+
         img {
           width: 85px;
+          border-radius: 50%;
+        }
+
+        .occupation {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 5px 10px;
+          border-radius: 25px;
+          position: absolute;
+          bottom: -10px;
+          background: linear-gradient(135deg, #FF26B2 0%, #851BD9 65%, #3F0FFF 100%);
+          box-shadow: 0px 5px 20px rgba($color: #fa7660, $alpha: 0.2);
+
+          @include mixins.fontStyle(
+            variables.$titleFont,
+            10px,
+            variables.$fontWeightRegular,
+            #ffffff
+          );
+        }
+      }
+
+      .profileInformation {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .name {
+          margin: 0;
+          justify-self: end;
+  
+          @include mixins.fontStyle(
+            variables.$titleFont,
+            16px,
+            variables.$fontWeightBold,
+            variables.$titleColor,
+          );
+        }
+  
+        .location {
+          margin: 5px 0 0 0;
+  
+          @include mixins.fontStyle(
+            variables.$textFont,
+            14px,
+            variables.$fontWeightRegular,
+            variables.$textColor
+          );
         }
       }
     }

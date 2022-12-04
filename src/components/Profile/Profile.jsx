@@ -1,6 +1,8 @@
 import React from "react";
 import "./Profile.scss";
 
+import avatar from "./img/avatar.jpg";
+
 export function Profile() {
   return (
     <section className="profile">
@@ -25,10 +27,13 @@ export function Profile() {
         <div className="visualDescription">
           <div className="profileCard">
             <div className="avatar">
-              <img src="" alt="avatar" />
+              <img src={avatar} alt="avatar" />
+              <div className="occupation">Frontend</div>
             </div>
-            <p className="name"></p>
-            <p className="location"></p>
+            <div className="profileInformation">
+              <p className="name">Oleksandr Smurov</p>
+              <p className="location">Thun, Switzerland</p>
+            </div>
           </div>
         </div>
       </div>

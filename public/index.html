@@ -2,42 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicons/smile.ico" />
+    <link rel="icon" href="%PUBLIC_URL%/public/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="Portfolio of Oleksandr Smurov"
+      content="Personal page of Oleksandr Smurov"
     />
-    <title>Portfolio</title>
+    <title>Personal Page</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-
-    <script>
-      const favicons = [
-        "%PUBLIC_URL%/favicons/smile.ico",
-        "%PUBLIC_URL%/favicons/letter-a.ico",
-        "%PUBLIC_URL%/favicons/number-1.ico",
-        "%PUBLIC_URL%/favicons/number-3.ico",
-        "%PUBLIC_URL%/favicons/letter-s.ico",
-        "%PUBLIC_URL%/favicons/letter-m.ico",
-        "%PUBLIC_URL%/favicons/letter-r.ico",
-        "%PUBLIC_URL%/favicons/letter-v.ico",
-      ];
-      let currentFaviconIndex = 0;
-
-      function setNextFavicon() {
-        const favicon = document.querySelector('link[rel="icon"]');
-        currentFaviconIndex >= (favicons.length - 1) ?
-          currentFaviconIndex = 0 :
-          currentFaviconIndex++;
-        
-        favicon.setAttribute("href", favicons[currentFaviconIndex]);
-      }
-
-      setInterval(setNextFavicon, 1500);
-    </script>
   </body>
 </html>

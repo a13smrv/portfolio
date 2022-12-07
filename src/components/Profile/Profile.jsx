@@ -1,9 +1,40 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Profile.scss";
 
 import avatar from "./img/avatar.jpg";
+import HtmlIcon from "./img/html.svg";
+import CssIcon from "./img/css.svg";
+import SassIcon from "./img/sass.svg";
+import JavaScriptIcon from "./img/javascript.svg";
+import TypeScriptIcon from "./img/typescript.svg";
+import ReactIcon from "./img/react.svg";
+import ReduxIcon from "./img/redux.svg";
+import NpmIcon from "./img/npm.svg";
+import GitIcon from "./img/git.svg";
+import { TechnologyIcon } from "../TechnologyIcon/TechnologyIcon";
+
+const technologies = [
+  { icon: HtmlIcon, name: "HTML", isHideName: false },
+  { icon: CssIcon, name: "CSS", isHideName: false },
+  { icon: SassIcon, name: "Sass", isHideName: true },
+  { icon: JavaScriptIcon, name: "JavaScript", isHideName: false },
+  { icon: TypeScriptIcon, name: "TypeScript", isHideName: false },
+  { icon: ReactIcon, name: "React", isHideName: false },
+  { icon: ReduxIcon, name: "Redux", isHideName: false },
+  { icon: NpmIcon, name: "NPM", isHideName: true },
+  { icon: GitIcon, name: "Git", isHideName: true },
+];
 
 export function Profile() {
+  const technologyIcons = technologies.map((technology) =>
+    <TechnologyIcon
+      icon={technology.icon}
+      name={technology.name}
+      isHideName={technology.isHideName}
+      key={technology.name}
+    />
+  );
+
   return (
     <section className="profile">
       <div className="container">
@@ -34,6 +65,9 @@ export function Profile() {
               <p className="name">Oleksandr Smurov</p>
               <p className="location">Thun, Switzerland</p>
             </div>
+          </div>
+          <div className="technologyIcons">
+            { technologyIcons }
           </div>
         </div>
       </div>

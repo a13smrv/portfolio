@@ -1,0 +1,13 @@
+@use "./../../scss/variables";
+@use "./../../scss//mixins";
+
+.portfolio {
+  display: flex;
+  justify-content: center;
+  padding: 100px 0px;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+}

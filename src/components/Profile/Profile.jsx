@@ -26,6 +26,19 @@ const technologies = [
 ];
 
 export function Profile() {
+  useEffect(() => {
+    const maxMoveLimit = 1.5;
+
+    window.addEventListener('mousemove', (event) => {
+      const mousePosition = {
+        clientX: event.clientX,
+        clientY: event.clientY,
+      };
+
+      parallax(mousePosition, ".technologyIcon", maxMoveLimit);
+    })
+  }, []);
+
   const technologyIcons = technologies.map((technology) =>
     <TechnologyIcon
       icon={technology.icon}
@@ -73,4 +86,30 @@ export function Profile() {
       </div>
     </section>
   )
+}
+
+const parallaxMoveLimit = [];
+function parallax(mousePosition, selector, maxMoveLimit) {
+  console.log(parallaxMoveLimit);
+  const client = {
+    width: document.documentElement.clientWidth - 1,
+    height: document.documentElement.clientHeight - 1,
+  };
+
+  const elements = document.querySelectorAll(selector);
+  elements.forEach((element, index) => {
+    if (!parallaxMoveLimit[index]) parallaxMoveLimit[index] = (Math.random() * maxMoveLimit);
+
+    const moveStepSize = {
+      axisX: client.width / parallaxMoveLimit[index] / 2,
+      axisY: client.height / parallaxMoveLimit[index] / 2,
+    };
+
+    const elementOffset = {
+      axisX: (mousePosition.clientX - (client.width / 2)) / moveStepSize.axisX,
+      axisY: (mousePosition.clientY - (client.height / 2)) / moveStepSize.axisY,
+    };
+
+    element.style.transform = `translate(${elementOffset.axisX}px, ${elementOffset.axisY}px)`;
+  });
 }

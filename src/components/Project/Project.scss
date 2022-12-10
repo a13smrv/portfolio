@@ -1,9 +1,104 @@
+@use "./../../scss/variables";
+@use "./../../scss//mixins";
+
 .project {
-  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 325px;
   height: 200px;
   border-radius: 5px;
   padding: 20px;
   box-sizing: border-box;
   box-shadow: 0px 10px 10px rgba($color: #000000, $alpha: 0.05);
-  background-color: rgba($color: #0a4ba0, $alpha: 0.2);
+  background: linear-gradient(180deg, #f8f2ff 0%, rgba($color: #ffffff, $alpha: 0) 50%);
+  transition: 0.1s ease-in-out;
+  cursor: pointer;
+  transition: box-shadow 0.15s ease-in-out;
+
+  &.Counter {
+    background: linear-gradient(180deg, #fff2f2 0%, rgba($color: #ffffff, $alpha: 0) 50%);
+  }
+
+  &.ModalWindow {
+    background: linear-gradient(180deg, #f2f6ff 0%, rgba($color: #ffffff, $alpha: 0) 50%);
+  }
+
+  &:hover {
+    box-shadow: 0px 5px 10px rgba($color: #000000, $alpha: 0.15);
+  }
+
+  .name {
+    margin: 0;
+
+    @include mixins.fontStyle(
+      variables.$titleFont,
+      16px,
+      variables.$fontWeightBold,
+      variables.$titleColor
+    );
+  }
+
+  .technologies {
+    margin: 10px 0 0 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+
+    .technology {
+      padding: 2.5px 5px;
+      border-radius: 10px;
+      border: 0.5px solid variables.$textColor;
+
+      @include mixins.fontStyle(
+        variables.$titleFont,
+        variables.$smallTextSize,
+        variables.$fontWeightRegular,
+        variables.$textColor
+      );
+
+      &.Sass {
+        border-color: rgba($color: #c76394, $alpha: 1.0);
+        background-color: rgba($color: #c76394, $alpha: 0.1);
+        color: variables.$titleColor;
+      }
+
+      &.JavaScript {
+        border-color: rgba($color: #efd81a, $alpha: 1.0);
+        background-color: rgba($color: #efd81a, $alpha: 0.1);
+        color: variables.$titleColor;
+      }
+
+      &.TypeScript {
+        border-color: rgba($color: #2f73bf, $alpha: 1.0);
+        background-color: rgba($color: #2f73bf, $alpha: 0.1);
+        color: variables.$titleColor;
+      }
+
+      &.React {
+        border-color: rgba($color: #5ed2f3, $alpha: 1.0);
+        background-color: rgba($color: #5ed2f3, $alpha: 0.1);
+        color: variables.$titleColor;
+      }
+
+      &.Redux {
+        border-color: rgba($color: #7649bb, $alpha: 1.0);
+        background-color: rgba($color: #7649bb, $alpha: 0.1);
+        color: variables.$titleColor;
+      }
+    }
+  }
+
+  .description {
+    margin: 0;
+
+    @include mixins.fontStyle(
+      variables.$textFont,
+      variables.$normalTextSize,
+      variables.$fontWeightRegular,
+      variables.$textColor
+    );
+  }
 }

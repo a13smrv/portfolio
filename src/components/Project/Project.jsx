@@ -1,10 +1,30 @@
 import React from "react";
 import "./Project.scss";
 
-export function Project() {
+export function Project({name, technologies, description, background}) {
   return (
-    <div className="project">
-       
+    <div style={{
+      backgroundImage: `url(${background})`,
+      backgroundPosition: "center",
+      backgroundSize: "cover",
+    }}>
+      <div className={`project ${name.replace(" ", "")}`}>
+        <div className="top">
+          <h3 className="name">{ name }</h3>
+          <ul className="technologies">
+            {
+              technologies.map((technology) =>
+                <li className={`technology ${technology}`} key={technology}>
+                    { technology }
+                </li>
+              )
+            }
+          </ul>
+        </div>
+        <div className="bottom">
+          <p className="description">{ description }</p>
+        </div>
+      </div>
     </div>
   )
 }

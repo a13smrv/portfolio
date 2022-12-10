@@ -20,7 +20,7 @@
   .name {
     @include mixins.fontStyle(
       variables.$titleFont,
-      variables.$normaltextSize,
+      variables.$normalTextSize,
       variables.$fontWeightRegular,
       variables.$textColor
     );

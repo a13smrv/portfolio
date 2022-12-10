@@ -75,7 +75,7 @@ export function Profile() {
               <div className="occupation">Frontend</div>
             </div>
             <div className="profileInformation">
-              <p className="name">Oleksandr Smurov</p>
+              <h3 className="name">Oleksandr Smurov</h3>
               <p className="location">Thun, Switzerland</p>
             </div>
           </div>
@@ -90,7 +90,6 @@ export function Profile() {
 
 const parallaxMoveLimit = [];
 function parallax(mousePosition, selector, maxMoveLimit) {
-  console.log(parallaxMoveLimit);
   const client = {
     width: document.documentElement.clientWidth - 1,
     height: document.documentElement.clientHeight - 1,

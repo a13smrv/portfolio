@@ -30,7 +30,7 @@
 
       @include mixins.fontStyle(
         variables.$textFont,
-        variables.$normaltextSize,
+        variables.$normalTextSize,
         variables.$fontWeightRegular,
         variables.$textColor
       );

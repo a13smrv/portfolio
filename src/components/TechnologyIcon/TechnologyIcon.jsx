@@ -1,9 +1,11 @@
 import React from "react";
 import "./TechnologyIcon.scss";
 
-export function TechnologyIcon({ icon, name, isHideName }) {
+import { screenSizes } from "../App/App";
+
+export function TechnologyIcon({ icon, name, isHideName, clientWidth }) {
   return (
-    <div className={`technologyIcon${ isHideName ? " hideName" : "" }`}>
+    <div className={`technologyIcon${ (isHideName && (clientWidth > screenSizes.laptop)) ? " hideName" : "" }`}>
       <div className="icon">
         <img src={icon} alt={name} />
       </div>

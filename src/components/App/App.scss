@@ -39,3 +39,9 @@ body {
     color: variables.$themeColor;
   }
 }
+
+@media (max-width: variables.$laptop) {
+  .container {
+    width: 768px;
+  }
+}

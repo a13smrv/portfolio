@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./Profile.scss";
 
 import avatar from "./img/avatar.jpg";
@@ -11,7 +11,8 @@ import ReactIcon from "./img/react.svg";
 import ReduxIcon from "./img/redux.svg";
 import NpmIcon from "./img/npm.svg";
 import GitIcon from "./img/git.svg";
-import { TechnologyIcon } from "../TechnologyIcon/TechnologyIcon";
+import { TechnologyIcon } from "./../TechnologyIcon/TechnologyIcon";
+import { screenSizes } from "./../App/App";
 
 const technologies = [
   { icon: HtmlIcon, name: "HTML", isHideName: false },
@@ -26,9 +27,10 @@ const technologies = [
 ];
 
 export function Profile() {
+  const [clientWidth, setClientWidth] = useState(document.documentElement.clientWidth);
+
   useEffect(() => {
     const maxMoveLimit = 1.5;
-
     window.addEventListener('mousemove', (event) => {
       const mousePosition = {
         clientX: event.clientX,
@@ -36,7 +38,9 @@ export function Profile() {
       };
 
       parallax(mousePosition, ".technologyIcon", maxMoveLimit);
-    })
+    });
+
+    window.addEventListener('resize', () => setClientWidth(document.documentElement.clientWidth));
   }, []);
 
   const technologyIcons = technologies.map((technology) =>
@@ -44,6 +48,7 @@ export function Profile() {
       icon={technology.icon}
       name={technology.name}
       isHideName={technology.isHideName}
+      clientWidth={clientWidth}
       key={technology.name}
     />
   );
@@ -79,11 +84,18 @@ export function Profile() {
               <p className="location">Thun, Switzerland</p>
             </div>
           </div>
-          <div className="technologyIcons">
-            { technologyIcons }
-          </div>
+          { clientWidth <= screenSizes.laptop ? null:
+            <div className="technologyIcons">
+              { technologyIcons }
+            </div> 
+          }
         </div>
       </div>
+      { clientWidth > screenSizes.laptop ? null:
+        <div className="container technologyIcons">
+          { technologyIcons }
+        </div> 
+      }
     </section>
   )
 }

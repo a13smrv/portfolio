@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./Portfolio.scss";
 
 import { Project } from "./../Project/Project";
 
-import portfolioBG from "./img/portfolio.jpg";
-import counterBG from "./img/counter.jpg";
-import modalWindowBG from "./img/modalWindow.jpg";
+import portfolioBG from "./img/portfolio.svg";
+import counterBG from "./img/counter.svg";
+import modalWindowBG from "./img/modalWindow.svg";
 
 const stackOfTechnologies = {
   html: "HTML",

@@ -5,8 +5,9 @@ export function Project({name, technologies, description, background}) {
   return (
     <div style={{
       backgroundImage: `url(${background})`,
-      backgroundPosition: "center",
-      backgroundSize: "cover",
+      backgroundPosition: "top 55% left 50%",
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "auto 125px",
     }}>
       <div className={`project ${name.replace(" ", "")}`}>
         <div className="top">

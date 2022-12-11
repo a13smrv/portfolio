@@ -4,6 +4,7 @@ import "./App.scss";
 import { Header } from "./../Header/Header";
 import { Profile } from "./../Profile/Profile";
 import { Portfolio } from "./../Portfolio/Portfolio";
+import { Footer } from "../Footer/Footer";
 
 export function App() {
   return(
@@ -12,6 +13,7 @@ export function App() {
         <Header />
         <Profile />
         <Portfolio />
+        <Footer />
       </div>
     </div>
   )

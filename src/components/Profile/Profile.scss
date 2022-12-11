@@ -24,22 +24,22 @@
       );
     }
   
-    .text {
-      line-height: 21px;
-      margin: 0;
+    // .text {
+    //   line-height: 21px;
+    //   margin: 0;
 
-      @include mixins.fontStyle(
-        variables.$textFont,
-        variables.$normalTextSize,
-        variables.$fontWeightRegular,
-        variables.$textColor
-      );
+    //   @include mixins.fontStyle(
+    //     variables.$textFont,
+    //     variables.$normalTextSize,
+    //     variables.$fontWeightRegular,
+    //     variables.$textColor
+    //   );
 
-      .link {
-        text-decoration: none;
-        color: variables.$themeColor;
-      }
-    }
+    //   .link {
+    //     text-decoration: none;
+    //     color: variables.$themeColor;
+    //   }
+    // }
 
     .introduction {
       margin: 40px 0 0 0;

@@ -1,0 +1,38 @@
+@use "./../../scss/variables";
+@use "./../../scss/mixins";
+
+.footer {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+  background-color: rgba($color: variables.$textColor, $alpha: 0.25);
+
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .feedback, .personalInfo, .socialMedia {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feedback, .socialMedia {
+    margin-top: 25px;
+  }
+
+  .socialMedia {
+    .socialMediaBlock {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      // margin-top: 5px;
+  
+      .socialMediaItem {
+        height: 20px;
+        width: 20px;
+      }
+    }
+  }
+}

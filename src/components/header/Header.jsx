@@ -1,8 +1,10 @@
 import React from "react";
 import "./Header.scss";
 
-import GitHubIcon from "./img/GitHub.svg";
-import LinkedInIcon from "./img/LinkedIn.svg";
+import { GitHubSVG } from "./../../common/svg/GitHubSVG.jsx";
+import { LinkedInSVG } from "./../../common/svg/LinkedInSVG.jsx";
+
+const iconColor = "#af48ff";
 
 export function Header() {
   return (
@@ -14,10 +16,10 @@ export function Header() {
         </div>
         <div className="socialMediaBlock">
           <a href="#" className="socialMediaItem">
-            <img src={GitHubIcon} alt="GitHub" />
+            <GitHubSVG color={iconColor} />
           </a>
           <a href="#" className="socialMediaItem">
-            <img src={LinkedInIcon} alt="LinkedIn" />
+            <LinkedInSVG color={iconColor} />
           </a>
         </div>
       </div>

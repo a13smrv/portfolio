@@ -1,3 +1,5 @@
+@use "./../../scss/variables";
+@use "./../../scss//mixins";
 @import-normalize;
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
@@ -14,4 +16,26 @@ body {
 
 .container {
   width: 1080px;
+}
+
+.text {
+  line-height: 21px;
+  margin: 0;
+  text-decoration: none;
+
+  @include mixins.fontStyle(
+    variables.$textFont,
+    variables.$normalTextSize,
+    variables.$fontWeightRegular,
+    variables.$textColor
+  );
+
+  strong {
+    font-weight: variables.$fontWeightBold;
+  }
+
+  .link {
+    text-decoration: none;
+    color: variables.$themeColor;
+  }
 }

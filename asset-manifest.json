@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "https://a13smrv.github.io/portfolio/static/css/main.5fbf1ef4.css",
-    "main.js": "https://a13smrv.github.io/portfolio/static/js/main.397055c5.js",
+    "main.css": "https://a13smrv.github.io/portfolio/static/css/main.0eeb7247.css",
+    "main.js": "https://a13smrv.github.io/portfolio/static/js/main.d6c03718.js",
     "static/media/portfolio.svg": "https://a13smrv.github.io/portfolio/static/media/portfolio.d7951fb3d251848d5e58dff13ac9e7ce.svg",
     "static/media/avatar.jpg": "https://a13smrv.github.io/portfolio/static/media/avatar.f0bd1564b6255e3e66f7.jpg",
     "static/media/counter.svg": "https://a13smrv.github.io/portfolio/static/media/counter.29427d82aaeb4853f3042777fa810fae.svg",
@@ -16,11 +16,11 @@
     "index.html": "https://a13smrv.github.io/portfolio/index.html",
     "static/media/npm.svg": "https://a13smrv.github.io/portfolio/static/media/npm.bd7c6ddc635e57964fc092f18fb688fe.svg",
     "static/media/css.svg": "https://a13smrv.github.io/portfolio/static/media/css.dc29e8fef9d58b44be0cedf2739b6007.svg",
-    "main.5fbf1ef4.css.map": "https://a13smrv.github.io/portfolio/static/css/main.5fbf1ef4.css.map",
-    "main.397055c5.js.map": "https://a13smrv.github.io/portfolio/static/js/main.397055c5.js.map"
+    "main.0eeb7247.css.map": "https://a13smrv.github.io/portfolio/static/css/main.0eeb7247.css.map",
+    "main.d6c03718.js.map": "https://a13smrv.github.io/portfolio/static/js/main.d6c03718.js.map"
   },
   "entrypoints": [
-    "static/css/main.5fbf1ef4.css",
-    "static/js/main.397055c5.js"
+    "static/css/main.0eeb7247.css",
+    "static/js/main.d6c03718.js"
   ]
 }

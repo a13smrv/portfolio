@@ -30,6 +30,7 @@ export function Profile() {
   const [clientWidth, setClientWidth] = useState(document.documentElement.clientWidth);
 
   useEffect(() => {
+    // Animation for TechnologyIcon components (Laptop)
     const maxMoveLimit = 1.5;
     window.addEventListener('mousemove', (event) => {
       const mousePosition = {
@@ -37,9 +38,35 @@ export function Profile() {
         clientY: event.clientY,
       };
 
-      parallax(mousePosition, ".technologyIcon", maxMoveLimit);
+      parallax(mousePosition, ".technologyIcons:not(.mobile) .technologyIcon", maxMoveLimit);
     });
 
+    //Animation for TechnologyIcon components (Mobile)
+    const animationStepSize = 1;
+    setInterval(() => {
+      const technologyIconsContainers = document.querySelectorAll(".technologyIcons.mobile .technologyIconsContainer");
+      if (technologyIconsContainers.length === 0) return;
+
+      technologyIconsContainers.forEach((container, position) => {
+        const containerWidth = Number(container.getBoundingClientRect().width);
+        const containerComputedStyle = window.getComputedStyle(container);
+        const containerGap = Number(containerComputedStyle.gap.slice(0, -2));
+
+        if (containerComputedStyle.position === "relative") {
+          container.style.left = `${(containerWidth + containerGap) * position}px`;
+          container.style.position = "absolute";
+        }
+
+        const containerLeftOffset = Number(container.style.left.slice(0, -2));
+
+        (containerLeftOffset < (containerWidth * -1)) ?
+          container.style.left = `${(containerLeftOffset + (containerWidth * technologyIconsContainers.length))
+            - animationStepSize + containerGap * (technologyIconsContainers.length)}px`:
+          container.style.left = `${containerLeftOffset - animationStepSize}px`;
+      });
+    }, 35);
+
+    // Updating the state of the component on the window resize
     window.addEventListener('resize', () => setClientWidth(document.documentElement.clientWidth));
   }, []);
 
@@ -92,8 +119,8 @@ export function Profile() {
         </div>
       </div>
       { clientWidth > screenSizes.laptop ? null:
-        <div className="container technologyIcons">
-          { technologyIcons }
+        <div className="container technologyIcons mobile">
+          {new Array(2).fill(<div className="technologyIconsContainer">{ technologyIcons }</div>)}
         </div> 
       }
     </section>

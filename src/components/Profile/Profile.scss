@@ -189,10 +189,17 @@
 
     .technologyIcons {
       display: flex;
-      gap: 15px;
-      position: static;
-      overflow: scroll;
-      height: 100px;
+      gap: 0px;
+      height: 52px;
+      position: relative;
+      overflow: hidden;
+      padding: 25px 0;
+
+      .technologyIconsContainer {
+        display: flex;
+        gap: 15px;
+        position: relative;
+      }
 
       .technologyIcon {
         position: static;

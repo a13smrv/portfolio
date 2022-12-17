@@ -3,13 +3,13 @@ import "./Project.scss";
 
 export function Project({name, technologies, description, background}) {
   return (
-    <div style={{
+    <div className="project" style={{
       backgroundImage: `url(${background})`,
       backgroundPosition: "top 55% left 50%",
       backgroundRepeat: "no-repeat",
       backgroundSize: "auto 125px",
     }}>
-      <div className={`project ${name.replace(" ", "")}`}>
+      <div className={`projectContent ${name.replace(" ", "")}`}>
         <div className="top">
           <h3 className="name">{ name }</h3>
           <ul className="technologies">

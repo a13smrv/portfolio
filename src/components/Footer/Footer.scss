@@ -35,4 +35,10 @@
       }
     }
   }
+
+  @media (max-width: variables.$laptop) {
+    & {
+      margin-top: 50px;
+    }
+  }
 }

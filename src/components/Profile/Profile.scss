@@ -171,6 +171,10 @@
   }
 
   @media (max-width: variables.$laptop) {
+    & {
+      padding: 25px 0;
+    }
+
     .container {
       gap: 40px;
     }
@@ -194,6 +198,7 @@
       position: relative;
       overflow: hidden;
       padding: 25px 0;
+      margin-top: 25px;
 
       .technologyIconsContainer {
         display: flex;

@@ -10,4 +10,15 @@
     display: flex;
     justify-content: space-between;
   }
+
+  @media (max-width: variables.$laptop) {
+    & {
+      padding: 0;
+    }
+
+    .container {
+      flex-wrap: wrap;
+      gap: 25px;
+    }
+  }
 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Profile.scss";
 
-import avatar from "./img/avatar.jpg";
+import avatar from "./../../common/img/avatar.jpg";
 import HtmlIcon from "./img/html.svg";
 import CssIcon from "./img/css.svg";
 import SassIcon from "./img/sass.svg";
@@ -13,6 +13,7 @@ import NpmIcon from "./img/npm.svg";
 import GitIcon from "./img/git.svg";
 import { TechnologyIcon } from "./../TechnologyIcon/TechnologyIcon";
 import { screenSizes } from "./../App/App";
+import { Avatar } from "../Avatar/Avatar";
 
 const technologies = [
   { icon: HtmlIcon, name: "HTML", isHideName: false },
@@ -26,9 +27,7 @@ const technologies = [
   { icon: GitIcon, name: "Git", isHideName: true },
 ];
 
-export function Profile() {
-  const [clientWidth, setClientWidth] = useState(document.documentElement.clientWidth);
-
+export function Profile({clientWidth}) {
   useEffect(() => {
     // Animation for TechnologyIcon components (Laptop)
     const maxMoveLimit = 1.5;
@@ -41,7 +40,7 @@ export function Profile() {
       parallax(mousePosition, ".technologyIcons:not(.mobile) .technologyIcon", maxMoveLimit);
     });
 
-    //Animation for TechnologyIcon components (Mobile)
+    //Animation for TechnologyIcon components (Tablet)
     const animationStepSize = 1;
     setInterval(() => {
       const technologyIconsContainers = document.querySelectorAll(".technologyIcons.mobile .technologyIconsContainer");
@@ -65,9 +64,6 @@ export function Profile() {
           container.style.left = `${containerLeftOffset - animationStepSize}px`;
       });
     }, 35);
-
-    // Updating the state of the component on the window resize
-    window.addEventListener('resize', () => setClientWidth(document.documentElement.clientWidth));
   }, []);
 
   const technologyIcons = technologies.map((technology) =>
@@ -100,23 +96,22 @@ export function Profile() {
             </p>
           </div>
         </div>
-        <div className="visualDescription">
-          <div className="profileCard">
-            <div className="avatar">
-              <img src={avatar} alt="avatar" />
-              <div className="occupation">Frontend</div>
+        { clientWidth <= screenSizes.tablet ? null:
+          <div className="visualDescription">
+            <div className="profileCard">
+              <Avatar avatar={avatar} occupation={"Frontend"} />
+              <div className="profileInformation">
+                <h3 className="name">Oleksandr Smurov</h3>
+                <p className="location">Thun, Switzerland</p>
+              </div>
             </div>
-            <div className="profileInformation">
-              <h3 className="name">Oleksandr Smurov</h3>
-              <p className="location">Thun, Switzerland</p>
-            </div>
+            { clientWidth <= screenSizes.laptop ? null:
+              <div className="technologyIcons">
+                { technologyIcons }
+              </div> 
+            }
           </div>
-          { clientWidth <= screenSizes.laptop ? null:
-            <div className="technologyIcons">
-              { technologyIcons }
-            </div> 
-          }
-        </div>
+        }
       </div>
       { clientWidth > screenSizes.laptop ? null:
         <div className="container technologyIcons mobile">

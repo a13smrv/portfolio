@@ -1,0 +1,39 @@
+@use "./../../scss/variables";
+@use "./../../scss//mixins";
+
+.avatar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  img {
+    width: 85px;
+    border-radius: 50%;
+  }
+
+  .occupation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 25px;
+    position: absolute;
+    bottom: -10px;
+    background: linear-gradient(135deg, #FF26B2 0%, #851BD9 65%, #3F0FFF 100%);
+    box-shadow: 0px 5px 20px rgba($color: #fa7660, $alpha: 0.2);
+
+    @include mixins.fontStyle(
+      variables.$titleFont,
+      10px,
+      variables.$fontWeightRegular,
+      #ffffff
+    );
+  }
+
+  @media (max-width: variables.$tablet) {
+    img {
+      // width: 25px;
+    }
+  }
+}

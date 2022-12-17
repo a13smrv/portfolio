@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./App.scss";
 
 import { Header } from "./../Header/Header";
@@ -8,17 +8,22 @@ import { Footer } from "../Footer/Footer";
 
 export const screenSizes = {
   laptop: 1200,
-  tablet: 768,
-  mobileM: 480,
-  mobileS: 320,
+  tablet: 900,
 };
 
 export function App() {
+  const [clientWidth, setClientWidth] = useState(document.documentElement.clientWidth);
+
+  useEffect(() => {
+    // Updating the state of the component on the window resize
+    window.addEventListener('resize', () => setClientWidth(document.documentElement.clientWidth));
+  }, []);
+
   return(
     <div className="app">
       <div className="backgroundContainer">
-        <Header />
-        <Profile />
+        <Header clientWidth={clientWidth} />
+        <Profile clientWidth={clientWidth} />
         <Portfolio />
         <Footer />
       </div>

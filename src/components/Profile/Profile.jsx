@@ -39,31 +39,6 @@ export function Profile({clientWidth}) {
 
       parallax(mousePosition, ".technologyIcons:not(.mobile) .technologyIcon", maxMoveLimit);
     });
-
-    //Animation for TechnologyIcon components (Tablet)
-    const animationStepSize = 1;
-    setInterval(() => {
-      const technologyIconsContainers = document.querySelectorAll(".technologyIcons.mobile .technologyIconsContainer");
-      if (technologyIconsContainers.length === 0) return;
-
-      technologyIconsContainers.forEach((container, position) => {
-        const containerWidth = Number(container.getBoundingClientRect().width);
-        const containerComputedStyle = window.getComputedStyle(container);
-        const containerGap = Number(containerComputedStyle.gap.slice(0, -2));
-
-        if (containerComputedStyle.position === "relative") {
-          container.style.left = `${(containerWidth + containerGap) * position}px`;
-          container.style.position = "absolute";
-        }
-
-        const containerLeftOffset = Number(container.style.left.slice(0, -2));
-
-        (containerLeftOffset < (containerWidth * -1)) ?
-          container.style.left = `${(containerLeftOffset + (containerWidth * technologyIconsContainers.length))
-            - animationStepSize + containerGap * (technologyIconsContainers.length)}px`:
-          container.style.left = `${containerLeftOffset - animationStepSize}px`;
-      });
-    }, 35);
   }, []);
 
   const technologyIcons = technologies.map((technology) =>

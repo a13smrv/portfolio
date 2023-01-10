@@ -160,10 +160,11 @@
       }
     }
 
-    .technologyIcons {
+    $technologyIconsGap: 15px;
+    .technologyIcons.mobile {
       display: flex;
-      gap: 0px;
       height: 52px;
+      gap: 0;
       position: relative;
       overflow: hidden;
       padding: 25px 0;
@@ -172,12 +173,43 @@
 
       .technologyIconsContainer {
         display: flex;
-        gap: 15px;
+        gap: $technologyIconsGap;
+        padding-right: $technologyIconsGap;
         position: relative;
+
+        &:nth-child(1) {
+          animation: technologyIconsContainerAnimation1 100s linear infinite;
+          animation-delay: -50s;
+        }
+
+        &:nth-child(2) {
+          animation: technologyIconsContainerAnimation2 100s linear infinite;
+          animation-delay: -100s;
+        }
       }
 
       .technologyIcon {
         position: static;
+      }
+    }
+    
+    @keyframes technologyIconsContainerAnimation1 {
+      0% {
+        transform: translateX(100%);
+      }
+
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    @keyframes technologyIconsContainerAnimation2 {
+      0% {
+        transform: translateX(0%);
+      }
+
+      100% {
+        transform: translateX(-200%);
       }
     }
   }
@@ -185,6 +217,10 @@
   @media (max-width: variables.$tablet) {
     .container {
       justify-content: center;
+
+      &.technologyIcons.mobile {
+        justify-content: flex-start;
+      }
     }
 
     .textDescription {

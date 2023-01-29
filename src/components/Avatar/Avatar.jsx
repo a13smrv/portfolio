@@ -1,11 +1,12 @@
 import React from "react";
 import "./Avatar.scss";
 
-export function Avatar({avatar, occupation}) {
+export function Avatar({avatar, type, occupation, status}) {
   return (
-    <div className="avatar">
+    <div className={`avatar${type ? ` ${type}`: ""}`}>
       <img src={avatar} alt="avatar" />
-      {occupation ? <div className="occupation">{occupation}</div> : null}
+      {status ? <div className="currentStatus">{status}</div> : null}
+      {(occupation && type) ? <div className="occupation">{occupation}</div> : null}
     </div>
   )
 }

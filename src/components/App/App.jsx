@@ -9,6 +9,8 @@ import { Footer } from "../Footer/Footer";
 export const screenSizes = {
   laptop: 1200,
   tablet: 900,
+  mobileM: 550,
+  mobileS: 410,
 };
 
 export function App() {

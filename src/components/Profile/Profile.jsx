@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./Profile.scss";
 
-import avatar from "./../../common/img/avatar.jpg";
+import avatar300x300 from "./../../common/img/avatar300x300.jpg";
+import avatar900x900 from "./../../common/img/avatar900x900.jpg";
 import HtmlIcon from "./img/html.svg";
 import CssIcon from "./img/css.svg";
 import SassIcon from "./img/sass.svg";
@@ -56,6 +57,14 @@ export function Profile({clientWidth}) {
       <div className="container">
         <div className="textDescription">
           <h2 className="title">👋 Hi, I'm Oleksandr</h2>
+          { clientWidth > screenSizes.tablet ? null : 
+              <Avatar
+                avatar={avatar900x900}
+                type={"onPage"}
+                occupation={"Frontend"}
+                status={"Now available"}
+              />
+          }
           <p className="introduction text">
             I'm a <strong>Frontend Developer</strong> with a passion for developing beautiful UIs and learning modern technologies.
             My mission is to connect businesses and users.
@@ -71,10 +80,14 @@ export function Profile({clientWidth}) {
             </p>
           </div>
         </div>
-        { clientWidth <= screenSizes.tablet ? null:
+        { clientWidth <= screenSizes.tablet ? null :
           <div className="visualDescription">
             <div className="profileCard">
-              <Avatar avatar={avatar} occupation={"Frontend"} />
+              <Avatar
+                avatar={avatar300x300}
+                type={"inCard"}
+                occupation={"Frontend"} 
+              />
               <div className="profileInformation">
                 <h3 className="name">Oleksandr Smurov</h3>
                 <p className="location">Thun, Switzerland</p>

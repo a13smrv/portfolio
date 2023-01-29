@@ -7,11 +7,6 @@
   align-items: center;
   position: relative;
 
-  img {
-    width: 85px;
-    border-radius: 50%;
-  }
-
   .occupation {
     display: flex;
     justify-content: center;
@@ -29,5 +24,65 @@
       variables.$fontWeightRegular,
       #ffffff
     );
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 0%;
+    }
+
+    100% {
+      background-position: 200% 0%;
+    }
+  }
+
+  .currentStatus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    padding: 10px 0;
+    background: linear-gradient(90deg, 
+      rgba($color: #11998e, $alpha: 0.9),
+      rgba($color: #38ef7d, $alpha: 0.9),
+      rgba($color: #11998e, $alpha: 0.9),
+    );
+    background-size: 200% 100%;
+    animation: gradient 5s ease-in-out infinite;
+    border-radius: 15px 15px 0 0;
+
+    @include mixins.fontStyle(
+      variables.$titleFont,
+      15px,
+      variables.$fontWeightRegular,
+      #ffffff
+    );
+  }
+
+  &.inCard {
+    img {
+      width: 85px;
+      border-radius: 50%;
+    }
+  }
+
+  &.onPage {
+    width: 75%;
+    align-self: center;
+
+    img {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0px 5px 50px rgba($color: #e0c5fc, $alpha: 1);
+    }
+
+    .occupation {
+      font-size: 15px;
+      padding: 10px 20px;
+      bottom: 0;
+      transform: translateY(50%);
+    }
   }
 }

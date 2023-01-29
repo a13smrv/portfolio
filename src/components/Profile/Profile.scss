@@ -225,14 +225,38 @@
 
     .textDescription {
       width: 575px;
+      display: flex;
+      flex-direction: column;
       
       .title {
         text-align: center;
+        margin-bottom: 25px;
       }
     }
 
     .visualDescription {
       display: none;
+    }
+  }
+
+  @media (max-width: variables.$mobileM) {
+    .textDescription {
+      .title {
+        font-size: variables.$titleSizeMobileM;
+      }
+
+      .bottomInformationBlock {
+        flex-direction: column;
+        gap: 25px;
+      }
+    }
+  }
+
+  @media (max-width: variables.$mobileS) {
+    .textDescription {
+      .title {
+        font-size: variables.$titleSizeMobileS;
+      }
     }
   }
 }

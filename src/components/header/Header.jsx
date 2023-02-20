@@ -8,7 +8,7 @@ import { LinkedInSVG } from "./../../common/svg/LinkedInSVG.jsx";
 
 const iconColor = "#af48ff";
 
-export function Header({ clientWidth }) {
+export function Header({ clientWidth, links }) {
   return (
     <header className="header">
       <div className="container">
@@ -17,10 +17,10 @@ export function Header({ clientWidth }) {
           {(clientWidth > screenSizes.tablet) ? <div className="currentStatus">Now available</div> : null}
         </div>
         <div className="socialMediaBlock">
-          <a href="#" className="socialMediaItem">
+          <a href={links.gitHub} target="_blank" className="socialMediaItem">
             <GitHubSVG color={iconColor} />
           </a>
-          <a href="#" className="socialMediaItem">
+          <a href={links.linkedIn} target="_blank" className="socialMediaItem">
             <LinkedInSVG color={iconColor} />
           </a>
         </div>

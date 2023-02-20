@@ -6,7 +6,7 @@ import { LinkedInSVG } from "./../../common/svg/LinkedInSVG.jsx";
 
 const iconColor = "#5d87a8";
 
-export function Footer() {
+export function Footer({ links }) {
   return (
     <footer className="footer">
       <div className="container">
@@ -18,10 +18,10 @@ export function Footer() {
         <div className="socialMedia">
           {/* <a className="text" href="mailto:a13smrv@gmail.com">a13smrv@gmail.com</a> */}
           <div className="socialMediaBlock">
-            <a href="#" className="socialMediaItem">
+            <a href={links.gitHub} target="_blank" className="socialMediaItem">
               <GitHubSVG color={iconColor} />
             </a>
-            <a href="#" className="socialMediaItem">
+            <a href={links.linkedIn} target="_blank" className="socialMediaItem">
               <LinkedInSVG color={iconColor} />
             </a>
         </div>

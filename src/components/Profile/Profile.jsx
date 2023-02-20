@@ -28,7 +28,7 @@ const technologies = [
   { icon: GitIcon, name: "Git", isHideName: true },
 ];
 
-export function Profile({clientWidth}) {
+export function Profile({ clientWidth, links }) {
   useEffect(() => {
     // Animation for TechnologyIcon components (Laptop)
     const maxMoveLimit = 1.5;
@@ -72,7 +72,7 @@ export function Profile({clientWidth}) {
           <div className="bottomInformationBlock">
             <p className="placeOfWork text">
               I'm looking for new opportunities<br />
-              Previously I worked at <a className="link" href="#">Abz.Agency</a>
+              Previously I worked at <a className="link" href={links.abzAgency} target="_blank">Abz.Agency</a>
             </p>
             <p className="contacts text">
               Thun, Switzerland<br />

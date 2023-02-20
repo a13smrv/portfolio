@@ -13,6 +13,12 @@ export const screenSizes = {
   mobileS: 410,
 };
 
+export const links = {
+  gitHub: "https://github.com/a13smrv/",
+  linkedIn: "https://www.linkedin.com/in/a13smrv/",
+  abzAgency: "https://abz.agency/",
+};
+
 export function App() {
   const [clientWidth, setClientWidth] = useState(document.documentElement.clientWidth);
 
@@ -24,10 +30,10 @@ export function App() {
   return(
     <div className="app">
       <div className="backgroundContainer">
-        <Header clientWidth={clientWidth} />
-        <Profile clientWidth={clientWidth} />
+        <Header clientWidth={clientWidth} links={links} />
+        <Profile clientWidth={clientWidth} links={links} />
         <Portfolio />
-        <Footer />
+        <Footer links={links} />
       </div>
     </div>
   )
